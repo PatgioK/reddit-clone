@@ -8,6 +8,7 @@ class CommunitiesController < ApplicationController
 
 
     def show
+        @posts = @community.posts
     end
 
     def new

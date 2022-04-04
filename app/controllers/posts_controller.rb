@@ -21,7 +21,7 @@ class PostsController < ApplicationController
         @post.community_id = params[:community_id]
 
         if @post.save
-            redirect_to communities_path(@post.community_id)
+            redirect_to community_path(@post.community_id)
         else
             @community = Community.find(params[:community_id])
             render :new
