@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
 
   #resources will create all default routes
-  resources :communities
+  resources :communities do
+    resources :posts
+  end
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root "public#index"
+  root to: "public#index"
 end

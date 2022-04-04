@@ -1,0 +1,5 @@
+<%= link_to "create new post", new_community_post_path(@community), class: "btn btn-primary float-right" %>
+
+<h2><%= @post.title %></h2>
+
+<%= simple_format @post.body %>
