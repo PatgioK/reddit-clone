@@ -10,9 +10,14 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div>
+      <%= render 'layouts/header' %>
 
-    <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+      <%= render partial:"layouts/footer" %>
+    </div>
   </body>
 </html>
