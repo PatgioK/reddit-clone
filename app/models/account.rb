@@ -6,5 +6,10 @@ class Account < ApplicationRecord
 
   has_many :communities
   has_many :posts
-  
+
+
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

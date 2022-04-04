@@ -21,15 +21,17 @@
     <div>
       <%= render 'layouts/header' %>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <%= yield %>
+      <!-- <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p> -->
+      <section class="bg-dark" style="--bs-bg-opacity: .15;">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <%= yield %>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     <%= render partial:"layouts/footer" %>
     </div>
 

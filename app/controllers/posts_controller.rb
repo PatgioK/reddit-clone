@@ -6,7 +6,6 @@ class PostsController < ApplicationController
         @posts = Post.all
     end
 
-
     def show
     end
 
@@ -27,7 +26,6 @@ class PostsController < ApplicationController
             render :new
         end
     end
-
 
 
 
