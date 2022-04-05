@@ -11,6 +11,7 @@
 <% end %> -->
   </div>
   <div class="col-sm-4">
+       <%= pluralize @subscriber_count, "member" %>
     <%= link_to "create New Post", new_community_post_path(@community), class:"btn btn-primary float-right" %>
     <small> <%= simple_format @community.rules %> </small>
   </div>
