@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2022_04_05_043410) do
     t.index ["community_id"], name: "index_posts_on_community_id"
   end
 
+  
   create_table "subscriptions", force: :cascade do |t|
     t.bigint "account_id"
     t.bigint "community_id"
