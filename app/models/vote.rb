@@ -5,7 +5,7 @@ class Vote < ApplicationRecord
     validates_uniqueness_of :account_id, scope: :post_id
 
     after_create :increment_vote
-    after_create :decrement_vote
+    after_destroy :decrement_vote
 
     private
 
