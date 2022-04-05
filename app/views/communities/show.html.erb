@@ -1,13 +1,17 @@
-<%= link_to "create New Post", new_community_post_path(@community), class:"btn btn-primary float-right" %>
+<h2><%= @community.name %></h2>
 
-<%= @community.name %>
+<div class="row">
+  <div class="col-sm-8">
+    <%= render partial: "posts/list",
+    locals: {posts: @posts} %>
 
-<%= @posts.each do |post| %>
+    <!-- <%= @posts.each do |post| %>
     <h4><%= link_to post.title, community_post_path(@community, post) %></h4>
     <p><%=truncate post.body, length: 200 %></p>
-<% end %>
-
-
-<small>
-<%= simple_format @community.rules %>
-</small>
+<% end %> -->
+  </div>
+  <div class="col-sm-4">
+    <%= link_to "create New Post", new_community_post_path(@community), class:"btn btn-primary float-right" %>
+    <small> <%= simple_format @community.rules %> </small>
+  </div>
+</div>
