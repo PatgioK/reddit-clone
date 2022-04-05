@@ -8,6 +8,6 @@
                <%= time_ago_in_words post.created_at %> ago.</small></p>
 
 
-        <p><%=truncate post.body, length: 200 %></p>
+        <p><%= truncate post.body, length: 200 %></p>
       </div>
       <% end %>

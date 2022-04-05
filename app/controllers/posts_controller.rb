@@ -30,15 +30,14 @@ class PostsController < ApplicationController
     end
 
 
-
     private
-
+    
     def set_post
         @post = Post.includes(:comments).find(params[:id])
     end
 
     def auth_subscriber
-        unless Subscription.where(community_id: [:community_id], account_id: current_account.id).any?
+        unless Subscription.where(community_id: params[:community_id], account_id: current_account.id).any?
             redirect_to root_path, flash: { danger: "You are not authorized to view this page"}
         end
     end
