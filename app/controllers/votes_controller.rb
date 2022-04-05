@@ -1,14 +1,17 @@
 class VotesController < ApplicationController
 
     def create
-        post_id = params[:vote][:post_id]
-        vote = Vote.new( vote_params )
+        # post_id = params[:vote][:post_id]
+        post_id = params[:post_id]
+        vote = Vote.new#( vote_params )
+        vote.post_id = params[:post_id]
         vote.account_id = current_account.id
 
         # check if vote by this user exists
-        existing_vote = Vote.where(account_id: current_account.id, post_id: post_id])
+        existing_vote = Vote.where(account_id: current_account.id, post_id: post_id)
 
-        responde_to |format|
+        respond_to do |format|
+          format.js {
             if existing_vote.size > 0
                 # destroy existing vote
                 existing_vote.first.destroy
@@ -26,11 +29,9 @@ class VotesController < ApplicationController
             end
             
             render "votes/create"
+        }
         end
     end
-
-
-
 
     private
     def vote_params

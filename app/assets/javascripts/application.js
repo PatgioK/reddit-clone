@@ -17,6 +17,5 @@
 
 //= require("bootstrap")
 
-require("bootstrap")
 
-require("../includes/vote.js")
+//= require("../includes/vote.js")
