@@ -1,24 +1,16 @@
 # README
+ruby '2.6.6'
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+gem 'rails', '~> 5.2.7'
 
-Things you may want to cover:
+INSTALL:
 
-* Ruby version
+bundle install
 
-* System dependencies
+rails db:create 
 
-* Configuration
+rails db:migrate
 
-* Database creation
+rails db:seed
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rails s
